@@ -17,17 +17,17 @@ import { BusinessService } from './business/business.service'
 import { AlwaysAuthGuard } from './auth/alwaysauthguard.service'
 
 const appRoutes: Routes = [
-  { path: 'login', component: LoginComponent },
-  { 
-    path: '', component: DashboardComponent,
-    canActivate: [AlwaysAuthGuard],
-    children : [
-      {
-        path: 'businesses',
-        component: BusinessComponent
-      }
-    ]
-  },  
+    { path: 'login', component: LoginComponent },
+    { 
+        path: '', component: DashboardComponent,
+        canActivate: [AlwaysAuthGuard],
+        children : [
+        {
+            path: 'businesses',
+            component: BusinessComponent
+        }
+        ]
+    },  
 ];
 
 @NgModule({
