@@ -1,0 +1,19 @@
+<h2>New Location</h2>
+
+<form #locationForm="ngForm" (ngSubmit)="add( locationForm )">
+    <div class="row">
+        <div class="col-md-8">
+            <div class="form-group">
+                <label for="name">Location Name</label>
+                <input  type="text"
+                        class="form-control"
+                        name="name"
+                        placeholder="Name"
+                        required autofocus ngModel>
+            </div>
+        </div>
+        <div class="col-md-8">
+            <button type="submit" class="btn btn-block btn-default">Submit</button>
+        </div>
+    </div>
+</form>

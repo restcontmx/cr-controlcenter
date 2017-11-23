@@ -3,45 +3,45 @@ import { Http, Response, Headers, RequestOptions } from '@angular/http';
 import { Observable } from 'rxjs/Rx';
 
 @Injectable()
-export class BusinessService {
+export class PermissionService {
 
     // Constructor function
     // @param http_service : http petttions
     // @returns none
     constructor( private http_service:Http ) {}
 
-    // Get all businesses
+    // Get all permissiones
     // @params none
     // @returns http get pettition
     getAll( ) : Observable<Response> { 
-        return this.http_service.get( '/api/business/' )
+        return this.http_service.get( '/api/permission/' )
     }
 
-    // Add new business
-    // @param data : business data
+    // Add new permission
+    // @param data : permission data
     // @returns http response
     add( data ) : Observable<Response> {
-        return this.http_service.post( '/api/business/', data )
+        return this.http_service.post( '/api/permission/', data )
     }
 
-    // Update business
-    // @param data: business data
+    // Update permission
+    // @param data: permission data
     // @returns http response
     update( data ) : Observable<Response> {
-        return this.http_service.put( '/api/business/' + data.id, data )
+        return this.http_service.put( '/api/permission/' + data.id, data )
     }
 
-    // Retrieve the business by id
-    // @param id : the business id
+    // Retrieve the permission by id
+    // @param id : the permission id
     // @returns Observable response
     detail( id ) : Observable<Response> {
-        return this.http_service.get( '/api/business/' + id )
+        return this.http_service.get( '/api/permission/' + id )
     }
 
-    // Delete business by id
+    // Delete permission by id
     // @param id : the location id
     // @returns Observable response
     delete( id ): Observable<Response> {
-        return this.http_service.delete( '/api/business/' + id  )
+        return this.http_service.delete( '/api/permission/' + id  )
     }
 }

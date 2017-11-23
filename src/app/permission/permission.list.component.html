@@ -1,0 +1,22 @@
+<h2>Business List</h2>
+<hr>
+<table class="table table-hover table-inverse">
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Web Reports URL</th>
+            <th>Created</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let permission of permissions" [routerLink]="['/permission/detail', permission.id]">
+            <th scope="row">{{permission.id}}</th>
+            <td>{{permission.name}}</td>
+            <td>{{permission.description}}</td>
+            <td>{{permission.web_url}}</td>
+            <td>{{permission.timestamp | date:'MM/dd/yyyy H:mm:ss'}}</td>
+        </tr>
+    </tbody>
+</table>

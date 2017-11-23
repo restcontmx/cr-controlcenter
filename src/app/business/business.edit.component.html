@@ -1,0 +1,39 @@
+<h2>Update Business</h2>
+
+<form (ngSubmit)="update()" *ngIf="business">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="form-group">
+                <label for="name"></label>
+                <input  type="text"
+                        class="form-control"
+                        name="name"
+                        placeholder="Name"
+                        required autofocus [(ngModel)]="business.name">
+            </div>
+        </div>
+        <div class="col-md-12">
+            <div class="form-group">
+                <label for="description"></label>
+                <input  type="text"
+                        class="form-control"
+                        name="description"
+                        placeholder="Description"
+                        required autofocus [(ngModel)]="business.description">
+            </div>
+        </div>
+        <div class="col-md-12">
+            <div class="form-group">
+                <label for="production_endpoint"></label>
+                <input  type="text"
+                        class="form-control"
+                        name="production_endpoint"
+                        placeholder="Production EndPoint"
+                        required autofocus [(ngModel)]="business.production_endpoint">
+            </div>
+        </div>
+        <div class="col-md-12">
+            <button type="submit" class="btn bt-block btn-default">Submit</button>                
+        </div>
+    </div>
+</form>

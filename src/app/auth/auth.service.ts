@@ -21,8 +21,7 @@ export class AuthService {
     // @params none
     // @return boolean
     viewVerification = () : boolean => {
-        let userData = this.cookie_service.get( 'userdata' ) || null;
-        return userData ? true : false;
+        return localStorage.getItem( 'userdata' ) || null ? true : false;
     }
 
     // Login function
@@ -39,6 +38,7 @@ export class AuthService {
     // @params none
     // @returns a logout pettition
     logout = () => {
+        localStorage.removeItem( 'userdata' )
         return this.http_service.post( '/api/auth/logout/', {});
     }
 }

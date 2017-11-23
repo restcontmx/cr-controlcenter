@@ -13,10 +13,15 @@ const   test_config = {
             api_uri : 'https://camaleon-reports-api.herokuapp.com/api/',
             port : '36594',
             token : 'UkVQT1JUU19XRUJBUFA6NztXZWEhVEBVPkFmUlJ1Yw=='
+        },
+        testing_config = {
+            hostname : 'camaleon-reports-api.herokuapp.com',
+            api_uri : 'https://murmuring-mesa-57518.herokuapp.com/api/',
+            port : '36594',
+            token : 'UkVQT1JUU19XRUJBUFA6NztXZWEhVEBVPkFmUlJ1Yw=='
         };
 
-
-const g_opts = production_config;
+const g_opts = test_config;
 
 /**
 * Get the full api uri compose with the model and the url data
@@ -100,7 +105,7 @@ var data_format_updated = function( error, response, body ) {
             case 200 :
                 return JSON.stringify({
                     error : false,
-                    data : body.message
+                    data : body.data
                 });
             case 400 :
                 return JSON.stringify({
@@ -130,7 +135,7 @@ var data_format_created = function( error, response, body ) {
             case 201 :
                 return JSON.stringify({
                     error : false,
-                    data : body.message
+                    data : body.data
                 });
             case 400 :
                 return JSON.stringify({

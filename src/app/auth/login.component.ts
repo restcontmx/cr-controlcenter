@@ -32,6 +32,7 @@ export class LoginComponent {
                     if( !response.error ) {
                         console.log( "Valid credentials" );
                         this.router.navigateByUrl( '/' );
+                        localStorage.setItem( 'userdata', JSON.stringify( response.user_data ) )
                     } else {
                         console.log( "Not valid login", response.message )
                         alert( response.message )

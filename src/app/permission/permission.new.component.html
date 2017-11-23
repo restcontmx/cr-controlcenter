@@ -1,0 +1,49 @@
+<h2>New Permission</h2>
+
+<form #permissionForm="ngForm" (ngSubmit)="add(permissionForm)">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="form-group">
+                <label for="name"></label>
+                <input  type="text"
+                        class="form-control"
+                        name="name"
+                        placeholder="Name"
+                        required autofocus ngModel>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="form-group">
+                <label for="description"></label>
+                <input  type="text"
+                        class="form-control"
+                        name="description"
+                        placeholder="Description"
+                        required autofocus ngModel>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="form-group">
+                <label for="web_url"></label>
+                <input  type="text"
+                        class="form-control"
+                        name="web_url"
+                        placeholder="Web Url"
+                        required autofocus ngModel>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="form-group">
+                <label for="value"></label>
+                <input  type="number"
+                        class="form-control"
+                        name="value"
+                        placeholder="Value"
+                        required autofocus ngModel>
+            </div>
+        </div>
+        <div class="col-md-12">
+            <button type="submit" class="btn bt-block btn-default">Submit</button>                
+        </div>
+    </div>
+</form>

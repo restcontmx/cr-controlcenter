@@ -15,7 +15,7 @@ var jsonParser = bodyParser.json();
 router.post( '/login', jsonParser, function( req, res ) {
     request(
         {
-            url : http_helper.get_api_uri( 'login/', '' ),
+            url : http_helper.get_api_uri( 'controlpanel/login/', '' ),
             method : 'POST',
             json : true,
             body : req.body,
