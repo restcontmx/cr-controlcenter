@@ -1,10 +1,16 @@
-<camaleon-navbar></camaleon-navbar>
+<div class="page">
+    <header class="header">
+        <camaleon-navbar></camaleon-navbar>
+    </header>
+    <div class="page-content d-flex align-items-stretch">
 
-<div class="container-fluid">
-    <div class="row">
         <camaleon-sidebar></camaleon-sidebar>
-        <main class="col-sm-9 offset-sm-3 col-md-10 offset-md-2 pt-3">
+
+        <div class="content-inner">
+            <!-- Content-->            
             <router-outlet></router-outlet>
-        </main>
+            <!-- Page Footer-->
+            <camaleon-footer></camaleon-footer>
+        </div>
     </div>
 </div>

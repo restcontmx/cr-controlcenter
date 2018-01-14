@@ -48,6 +48,25 @@ router.get( '/bybusiness', jsonParser, function( req, res ) {
 });
 
 /**
+* location status petttion
+**/
+router.get( '/status/:id', jsonParser, function( req, res ) {
+    var userdata = JSON.parse( req.cookies[ 'userdata' ] );
+    console.log( "Inside get status route" )
+    request(
+        {
+            url : http_helper.get_api_uri( 'location/status/', req.params.id ),
+            method : 'GET',
+            json : true,
+            headers : {
+                'Authorization' : http_helper.get_basic_auth_w_token( encryption_system.decryptCookie( userdata.auth_data ) )
+            }
+        },
+        ( error, response, body ) => { res.send( http_helper.data_format_ok( error, response, body ) ) }
+    );
+});
+
+/**
 * location create pettition
 **/
 router.post( '/', jsonParser, function( req, res ) {

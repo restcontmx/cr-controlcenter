@@ -9,7 +9,7 @@
       "outDir": "dist",
       "assets": [
         "assets",
-        "favicon.ico"
+        "assets/img/favicon.ico"
       ],
       "index": "index.html",
       "main": "main.ts",
@@ -20,9 +20,16 @@
       "prefix": "app",
       "styles": [
         "../node_modules/font-awesome/css/font-awesome.css",
-        "styles.css"
+        "assets/css/fontastic.css",
+        "assets/css/style.green.css",
+        "assets/css/custom.css"
       ],
       "scripts": [
+        "assets/vendor/popper.js/umd/popper.min.js",
+        "assets/vendor/jquery.cookie/jquery.cookie.js",
+        "assets/vendor/chart.js/Chart.min.js",
+        "assets/vendor/jquery-validation/jquery.validate.min.js",
+        "assets/js/front.js"
       ],
       "environmentSource": "environments/environment.ts",
       "environments": {

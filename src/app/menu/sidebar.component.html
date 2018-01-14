@@ -1,16 +1,26 @@
-<nav class="col-sm-3 col-md-2 hidden-xs-down bg-faded sidebar">
-    <ul class="nav nav-pills flex-column">
-        <li class="nav-item">
-            <a class="nav-link" [routerLink]="['/']">Overview</a>
+<!-- Side Navbar -->
+<nav class="side-navbar">
+    <!-- Sidebar Navidation Menus-->
+    <ul class="list-unstyled">
+        <li>
+            <a href="/">
+                <i class="icon-home"></i>Home </a>
         </li>
-        <li class="nav-item">
-            <a class="nav-link" [routerLink]="['/business']">Business</a>
+        <li>
+            <a href="/business">
+                <i class="fa fa-building"></i>Businesses </a>
         </li>
-        <li class="nav-item">
-            <a class="nav-link" [routerLink]="['/permission']">Permissions</a>
+        <li>
+            <a href="/permission">
+                <i class="fa fa-universal-access"></i>Permissions </a>
         </li>
-        <li class="nav-item">
-            <a class="nav-link" [routerLink]="['/users']">Users</a>
+        <li>
+            <a href="/monitor">
+                <i class="fa fa-bug"></i>Monitor Settings </a>
+        </li>
+        <li>
+            <a href="forms.html">
+                <i class="fa fa-cogs"></i>Settings </a>
         </li>
     </ul>
 </nav>

@@ -1,19 +1,39 @@
-<h2>New Location</h2>
+<br>
+<div class="breadcrumb-holder container-fluid">
+    <ul class="breadcrumb">
+        <li class="breadcrumb-item">
+            <a href="/">Dashboard</a>
+        </li>
+        <li class="breadcrumb-item">
+            <a href="/business">Business</a>    
+        </li>
+        <li class="breadcrumb-item active">New Location</li>
+        
+    </ul>
+</div>
 
-<form #locationForm="ngForm" (ngSubmit)="add( locationForm )">
+<section>
     <div class="row">
         <div class="col-md-8">
-            <div class="form-group">
-                <label for="name">Location Name</label>
-                <input  type="text"
-                        class="form-control"
-                        name="name"
-                        placeholder="Name"
-                        required autofocus ngModel>
-            </div>
-        </div>
-        <div class="col-md-8">
-            <button type="submit" class="btn btn-block btn-default">Submit</button>
+            <div class="card">
+                <div class="card-header d-flex align-items-center">
+                    <h3 class="h4">New Location</h3>
+                </div>
+                <div class="card-body">
+                    <form #locationForm="ngForm" (ngSubmit)="add( locationForm )">
+                        <div class="form-group">
+                            <label for="name">Location Name</label>
+                            <input  type="text"
+                                    class="form-control"
+                                    name="name"
+                                    placeholder="Name"
+                                    required autofocus ngModel>
+                        </div>
+                        <br>
+                        <button type="submit" class="btn btn-block btn-default">Submit</button> 
+                    </form>
+                </div>   
+            </div>    
         </div>
     </div>
-</form>
+</section>

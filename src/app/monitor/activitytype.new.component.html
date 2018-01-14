@@ -1,0 +1,62 @@
+<br>
+<div class="breadcrumb-holder container-fluid">
+    <ul class="breadcrumb">
+        <li class="breadcrumb-item">
+            <a href="/">Dashboard</a>
+        </li>
+        <li class="breadcrumb-item active">Activity Type New</li>
+    </ul>
+</div>
+
+<section *ngIf="errors || messages">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-body">
+                    <div class="p-3 mb-2 bg-danger text-white" *ngIf="errors">
+                        {{errors}}
+                    </div>
+                    <div class="p-3 mb-2 bg-warning text-white" *ngIf="messages">
+                        {{messages}}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="container-fluid">
+                <div class="card">
+                    <div class="card-body">
+                        <form #aForm="ngForm" (ngSubmit)="add(aForm)">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label for="name"></label>
+                                    <input type="text" class="form-control" name="name" placeholder="Name" required autofocus ngModel>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label for="description"></label>
+                                    <input type="text" class="form-control" name="description" placeholder="Description" required autofocus ngModel>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label for="value"></label>
+                                    <input type="number" class="form-control" name="value" placeholder="Value" autofocus ngModel>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <button type="submit" class="btn bt-block btn-default">Submit</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

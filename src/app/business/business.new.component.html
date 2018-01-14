@@ -1,85 +1,101 @@
-<h2>New Business</h2>
+<br>
+<div class="breadcrumb-holder container-fluid">
+    <ul class="breadcrumb">
+        <li class="breadcrumb-item">
+            <a href="/">Dashboard</a>
+        </li>
+        <li class="breadcrumb-item active">Business New</li>
+    </ul>
+</div>
 
-<form #businessForm="ngForm" (ngSubmit)="add(businessForm)">
+<section *ngIf="errors || messages">
     <div class="row">
         <div class="col-md-12">
-            <div class="form-group">
-                <label for="business_name"></label>
-                <input  type="text"
-                        class="form-control"
-                        name="business_name"
-                        placeholder="Name"
-                        required autofocus ngModel>
+            <div class="card">
+                <div class="card-body">
+                    <div class="p-3 mb-2 bg-danger text-white" *ngIf="errors">
+                        {{errors}}
+                    </div>
+                    <div class="p-3 mb-2 bg-warning text-white" *ngIf="messages">
+                        {{messages}}
+                    </div>
+                </div>
             </div>
-        </div>
-        <div class="col-md-12">
-            <div class="form-group">
-                <label for="business_description"></label>
-                <input  type="text"
-                        class="form-control"
-                        name="business_description"
-                        placeholder="Description"
-                        required autofocus ngModel>
-            </div>
-        </div>
-        <div class="col-md-12">
-            <div class="form-group">
-                <label for="business_production_endpoint"></label>
-                <input  type="text"
-                        class="form-control"
-                        name="business_production_endpoint"
-                        placeholder="Production EndPoint"
-                        required autofocus ngModel>
-            </div>
-        </div>
-        <div class="col-md-12">
-            <h3>Default Camaleon User</h3>
-            <small>This is for camaleon backdoor user.</small>
-            <hr>
-        </div>
-        <div class="col-md-6">
-            <div class="form-group">
-                <label for="user_first_name"></label>
-                <input  type="text"
-                        class="form-control"
-                        name="user_first_name"
-                        placeholder="First Name"
-                        required autofocus ngModel>
-            </div>
-        </div>
-        <div class="col-md-6">
-            <div class="form-group">
-                <label for="user_last_name"></label>
-                <input  type="text"
-                        class="form-control"
-                        name="user_last_name"
-                        placeholder="Second Name"
-                        required autofocus ngModel>
-            </div>
-        </div>
-        <div class="col-md-6">
-            <div class="form-group">
-                <label for="user_email">Email address</label>
-                <input  type="email" 
-                        class="form-control" 
-                        id="exampleInputEmail1"  
-                        placeholder="Enter default user email"
-                        name="user_email" required autofocus ngModel>
-            </div>
-        </div>
-        <div class="col-md-6">
-            <div class="form-group">
-                <label for="user_password">Password</label>
-                <input  type="text" 
-                        class="form-control" 
-                        id="exampleInputPassword1" 
-                        placeholder="Password"
-                        name="user_password"
-                        required autofocus ngModel>
-            </div>
-        </div>
-        <div class="col-md-12">
-            <button type="submit" class="btn bt-block btn-default">Submit</button>                
         </div>
     </div>
-</form>
+</section>
+
+<section>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="container-fluid">
+                <div class="card">
+                    <div class="card-body">
+                        <form #businessForm="ngForm" (ngSubmit)="add(businessForm)">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label for="business_name"></label>
+                                    <input type="text" class="form-control" name="business_name" placeholder="Name" required autofocus ngModel>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label for="business_description"></label>
+                                    <input type="text" class="form-control" name="business_description" placeholder="Description" required autofocus ngModel>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label for="business_production_endpoint"></label>
+                                    <input type="text" class="form-control" name="business_production_endpoint" placeholder="Production EndPoint" required autofocus
+                                        ngModel>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label for="business_tanus_symb_link"></label>
+                                    <input type="text" class="form-control" name="business_tanus_symb_link" placeholder="Tanus Symbolic Link" required autofocus
+                                        ngModel>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <h3>Default Camaleon User</h3>
+                                <small>This is for camaleon backdoor user.</small>
+                                <hr>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="user_first_name"></label>
+                                    <input type="text" class="form-control" name="user_first_name" placeholder="First Name" required autofocus ngModel>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="user_last_name"></label>
+                                    <input type="text" class="form-control" name="user_last_name" placeholder="Second Name" required autofocus ngModel>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="user_email">Email address</label>
+                                    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter default user email" name="user_email"
+                                        required autofocus ngModel>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="user_password">Password</label>
+                                    <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Password" name="user_password" required autofocus
+                                        ngModel>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <button type="submit" class="btn bt-block btn-default">Submit</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

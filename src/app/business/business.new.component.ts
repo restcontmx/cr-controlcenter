@@ -11,6 +11,9 @@ import { UserService } from '../users/user.service'
 })
 export class BusinessNewComponent implements OnInit {
 
+    errors : String
+    messages : String
+
     // Constructor function
     // @param authservice: authentication service
     // @param router : router service
@@ -45,7 +48,8 @@ export class BusinessNewComponent implements OnInit {
                 business = {
                     name : businessForm.value.business_name,
                     description : businessForm.value.business_description,
-                    production_endpoint : businessForm.value.business_production_endpoint
+                    production_endpoint : businessForm.value.business_production_endpoint,
+                    tanus_symb_link : businessForm.value.business_tanus_symb_link
                 }
 
             this.service.add( business )
@@ -61,11 +65,11 @@ export class BusinessNewComponent implements OnInit {
                                                         console.log( "User successfuly added!" )
                                                         this.router.navigateByUrl( '/business' )
                                                     } else {
-                                                        console.log( "There was an error with the user; " + response2.message )
+                                                        this.errors = 'There was an error with the user; ' + response2.message
                                                     }
                                                 })
                             } else {
-                                console.log( "There was an error adding the business; " + response.message )
+                                this.errors = "There was an error adding the business; " + response.message
                             }
                         })
         }

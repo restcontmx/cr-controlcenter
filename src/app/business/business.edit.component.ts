@@ -62,7 +62,8 @@ export class BusinessEditComponent implements OnInit {
             id : this.business.id,
             name : this.business.name,
             description : this.business.description,
-            production_endpoint : this.business.production_endpoint
+            production_endpoint : this.business.production_endpoint,
+            tanus_symb_link : this.business.tanus_symb_link
         }
 
         this.service.update( business )

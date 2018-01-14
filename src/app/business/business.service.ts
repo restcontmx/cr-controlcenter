@@ -13,7 +13,7 @@ export class BusinessService {
     // Get all businesses
     // @params none
     // @returns http get pettition
-    getAll( ) : Observable<Response> { 
+    getAll() : Observable<Response> { 
         return this.http_service.get( '/api/business/' )
     }
 
@@ -43,5 +43,26 @@ export class BusinessService {
     // @returns Observable response
     delete( id ): Observable<Response> {
         return this.http_service.delete( '/api/business/' + id  )
+    }
+
+    // Retrieve the business by id
+    // @param id : the business id
+    // @returns Observable response
+    subCancel( id ) : Observable<Response> {
+        return this.http_service.get( '/api/subscription/cancel/' + id )
+    }
+
+    // Retrieve the business by id
+    // @param id : the business id
+    // @returns Observable response
+    subPending( id ) : Observable<Response> {
+        return this.http_service.get( '/api/subscription/pending/' + id )
+    }
+
+    // Retrieve the business by id
+    // @param id : the business id
+    // @returns Observable response
+    subPay( id ) : Observable<Response> {
+        return this.http_service.get( '/api/subscription/pay/' + id )
     }
 }

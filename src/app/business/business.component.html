@@ -1,13 +1,33 @@
-<h2>Businesses</h2>
-<hr>
-<div class="row">
-    <div class="col-md-3">
-        <div class="list-group">
-            <a [routerLink]="['/business/']" class="list-group-item list-group-item-action">List</a>
-            <a [routerLink]="['/business/new']" class="list-group-item list-group-item-action">New</a>
+<header class="page-header">
+    <div class="container-fluid">
+        <h2 class="no-margin-bottom">Businesses</h2>
+    </div>
+</header>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-2">
+            <br>
+            <div class="statistic d-flex align-items-center bg-white has-shadow" [routerLink]="['/business/']">
+                <div class="icon bg-red">
+                    <i class="fa fa-list"></i>
+                </div>
+                <div class="text">
+                    <small>List</small>
+                </div>
+            </div>
+            <div class="statistic d-flex align-items-center bg-white has-shadow" [routerLink]="['/business/new']">
+                <div class="icon bg-green">
+                    <i class="fa fa-plus-circle"></i>
+                </div>
+                <div class="text">
+                    <small>New</small>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-10">
+            <router-outlet></router-outlet>
         </div>
     </div>
-    <div class="col-md-9">
-        <router-outlet></router-outlet>
-    </div>
 </div>
+

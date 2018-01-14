@@ -28,27 +28,35 @@ export class LocationService {
     // @param data: location data
     // @returns http response
     update( data ): Observable<Response> {
-        return this.http_service.put('/api/location/' + data.id, data)
+        return this.http_service.put( `/api/location/${data.id}`, data)
     }
 
     // Retrieve the location by id
     // @param id : the location id
     // @returns Observable response
     detail( id ): Observable<Response> {
-        return this.http_service.get('/api/location/' + id)
+        return this.http_service.get( `/api/location/${id}` )
     }
 
     // Delete location by id
     // @param id : the location id
     // @returns Observable response
     delete( id ): Observable<Response> {
-        return this.http_service.delete( '/api/location/' + id  )
+        return this.http_service.delete( `/api/location/${id}`  )
     }
 
     // Get all locations by business id
     // @params id business_id
     // @returns Observable response
     getLocationsByBusinessId( id ) : Observable<Response> {
-        return this.http_service.get( '/api/location/bybusiness?business_id=' + id )
+        return this.http_service.get( `/api/location/bybusiness?business_id=${id}` )
+    }
+
+    // Get Status
+    // Get all the location table status
+    // @param id - location id
+    // @returns observable response
+    getStatus( id ) : Observable<Response> {
+        return this.http_service.get( `/api/location/status/${id}` )
     }
 }
