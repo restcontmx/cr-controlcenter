@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core'
 import { Http, Response, Headers, RequestOptions } from '@angular/http';
 import { Observable } from 'rxjs/Rx';
+import { SetupService } from '../auth/setup.service';
 
 @Injectable()
 export class LocationService {
@@ -8,20 +9,21 @@ export class LocationService {
     // Constructor function
     // @param http_service : http petttions
     // @returns none
-    constructor(private http_service: Http) { }
+    constructor(    private http_service: Http,
+                    private setup_service: SetupService ) { }
 
     // Get all locationes
     // @params none
     // @returns http get pettition
     getAll(): Observable<Response> {
-        return this.http_service.get('/api/location')
+        return this.http_service.get(this.setup_service.getAPIUri() + 'location')
     }
 
     // Add new location
     // @param data : location data
     // @returns http response
     add( data ): Observable<Response> {
-        return this.http_service.post('/api/location/', data)
+        return this.http_service.post(this.setup_service.getAPIUri() + 'location/', data)
     }
 
     // Update location
@@ -58,5 +60,13 @@ export class LocationService {
     // @returns observable response
     getStatus( id ) : Observable<Response> {
         return this.http_service.get( `/api/location/status/${id}` )
+    }
+
+    // Hard update
+    // Set a hard update on all the tables
+    // @param id : Number - location id
+    // @return observable response
+    hardUpdate( id : Number ) : Observable<Response> {
+        return this.http_service.get( `/api/location/hardupdate/${id}` )
     }
 }

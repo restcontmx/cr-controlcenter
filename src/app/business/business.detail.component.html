@@ -19,7 +19,7 @@
                 <section class="charts">
                     <div class="container-fluid">
                         <div class="row">
-                            <div class="col-md-6">
+                            <div class="col-md-12">
                                 <div class="line-chart-example card">
                                     <div class="card-close">
                                         <div class="dropdown">
@@ -52,7 +52,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-md-6">
+                            <div class="col-md-12">
                                     <div class="line-chart-example card">
                                         <div class="card-close">
                                             <div class="dropdown">
@@ -212,11 +212,12 @@
                 </div>
             </div>
             
-            <div class="col-md-6">
-                <div class="container-fluid">
+            <div class="col-md-12">
 
-                    <h2>Activities</h2>
-                    <!-- Project-->
+                <h2>Activities</h2>
+                <hr>
+                <div class="container-fluid" style="height:500px;overflow-y:scroll;">
+
                     <div class="project" *ngFor="let a of activity">
                         <div class="row bg-white has-shadow">
                             <div class="left-col col-lg-6 d-flex align-items-center justify-content-between">
@@ -227,7 +228,7 @@
                                     </div>
                                 </div>
                                 <div class="project-date">
-                                    <span class="hidden-sm-down">{{a.timestamp | date}}</span>
+                                    <span class="hidden-sm-down">{{a.timestamp | date : "MM/dd/yyyy HH:mm:ss"}}</span>
                                 </div>
                             </div>
                             <div class="right-col col-lg-6 d-flex align-items-center">
@@ -243,19 +244,19 @@
                             </div>
                         </div>
                     </div>
+                </div>
 
-                    <div class="card">
-                        <div class="card-body">
-                            <button class="btn btn-sm btn-default" style="float:right;">Next 50</button>
-                        </div>
+                <div class="card">
+                    <div class="card-body">
+                        <button class="btn btn-sm btn-default" style="float:right;">Next 50</button>
                     </div>
                 </div>
             </div>
-            <div class="col-md-6">
-                <div class="container-fluid">
+            <div class="col-md-12">
+                <h2>Error Report</h2>
+                <hr>
+                <div class="container-fluid" style="height:500px;overflow-y: scroll;">
 
-                    <h2>Error Report</h2>
-                    <!-- Project-->
                     <div class="project" *ngFor="let er of error_reports">
                         <div class="row bg-white has-shadow">
                             <div class="left-col col-lg-6 d-flex align-items-center justify-content-between">
@@ -266,7 +267,7 @@
                                     </div>
                                 </div>
                                 <div class="project-date">
-                                    <span class="hidden-sm-down">{{er.timestamp | date}}</span>
+                                    <span class="hidden-sm-down">{{er.timestamp | date : "MM/dd/yyyy HH:mm:ss"}}</span>
                                 </div>
                             </div>
                             <div class="right-col col-lg-6 d-flex align-items-center">
@@ -282,11 +283,11 @@
                             </div>
                         </div>
                     </div>
+                </div>
 
-                    <div class="card">
-                        <div class="card-body">
-                            <button class="btn btn-sm btn-default" style="float:right;">Next 50</button>
-                        </div>
+                <div class="card">
+                    <div class="card-body">
+                        <button class="btn btn-sm btn-default" style="float:right;">Next 50</button>
                     </div>
                 </div>
             </div>

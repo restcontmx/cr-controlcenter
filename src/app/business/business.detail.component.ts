@@ -33,7 +33,7 @@ export class BusinessDetailComponent implements OnInit {
     public multi: any[];
     public data: any[];
 
-    public view: any[] = [500,0];
+    public view: any[] = [0,0];
 
     public showXAxis = true;
     public showYAxis = true;

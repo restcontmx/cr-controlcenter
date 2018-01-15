@@ -9,19 +9,11 @@ const   test_config = {
             token : 'UkVQT1JUU19XRUJBUFA6NztXZWEhVEBVPkFmUlJ1Yw=='
         },
         production_config = {
-            hostname : 'camaleon-reports-api.herokuapp.com',
-            api_uri : 'https://camaleon-reports-api.herokuapp.com/api/',
-            port : '36594',
-            token : 'UkVQT1JUU19XRUJBUFA6NztXZWEhVEBVPkFmUlJ1Yw=='
-        },
-        testing_config = {
-            hostname : 'camaleon-reports-api.herokuapp.com',
-            api_uri : 'https://murmuring-mesa-57518.herokuapp.com/api/',
-            port : '36594',
+            api_uri : 'https://camaleonauth-api.herokuapp.com/api/',
             token : 'UkVQT1JUU19XRUJBUFA6NztXZWEhVEBVPkFmUlJ1Yw=='
         };
 
-const g_opts = test_config;
+const g_opts = production_config;
 
 /**
 * Get the full api uri compose with the model and the url data

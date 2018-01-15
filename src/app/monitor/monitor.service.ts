@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core'
 import { Http, Response, Headers, RequestOptions } from '@angular/http';
 import { Observable } from 'rxjs/Rx';
+import { SetupService } from '../auth/setup.service';
 
 @Injectable()
 export class MonitorService {
@@ -8,14 +9,15 @@ export class MonitorService {
     // Constructor function
     // @param http_service : http pettitions
     // @returns none
-    constructor( private http_service:Http ) {}
+    constructor(    private http_service:Http,
+                    private setup_service:SetupService  ) {}
 
     // getActivityByBusiness 
     // @param id integer - business id
     // @param p integer - pagination number
     // @returns http_get_pettition
     getActivityByBusiness( id, p ) : Observable<Response> {
-        return this.http_service.get( '/api/monitor/business/activity/' + id + '?p=' + p )
+        return this.http_service.get( this.setup_service.getAPIUri() + 'monitor/business/activity/' + id + '?p=' + p )
     }
 
     // getErrorReportsByBusiness
@@ -23,21 +25,21 @@ export class MonitorService {
     // @param p integer - pagination number
     // @reutrns http_get_pettition
     getErrorReportsByBusiness( id, p ) : Observable<Response> {
-        return this.http_service.get( '/api/monitor/business/errorreport/' + id + '?p=' + p )
+        return this.http_service.get( this.setup_service.getAPIUri() + 'monitor/business/errorreport/' + id + '?p=' + p )
     }
 
     // createActivityType creates new activity type
     // @params data - activity type body
     // @return observable response
     createActivityType( data ) : Observable<Response> {
-        return this.http_service.post( '/api/monitor/activitytype/', data )
+        return this.http_service.post( this.setup_service.getAPIUri() + 'monitor/activitytype/', data )
     }
 
     // getAllActivityType returns all the activity types
     // @params none
     // @returns Observable response
     getAllActivityType() : Observable<Response> {
-        return this.http_service.get( '/api/monitor/activitytype/' )
+        return this.http_service.get( this.setup_service.getAPIUri() + 'monitor/activitytype/' )
     }
 
     // getReports return all the activity reports and error reports

@@ -7,8 +7,18 @@
         <li class="breadcrumb-item active">Location Status List</li>
     </ul>
 </div>
+
 <section>
+    
     <div class="container-fluid" *ngIf="status">
+        
+        <div class="card">
+            <div class="card-body">
+                <button class="btn btn-sm btn-danger" style="float:right;" (click)="hardUpdate()" [hidden]="updating">Hard Update</button>
+                <h5 [hidden]="!updating">Updating...</h5>
+            </div>
+        </div>
+
         <div class="card">
             <div class="card-body">
                 <table class="table table-striped table-hover">

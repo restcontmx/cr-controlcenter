@@ -44,6 +44,7 @@ import { ActivityTypeNewComponent } from './monitor/activitytype.new.component'
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 import { NgxChartsModule } from '@swimlane/ngx-charts';
+import { SetupService } from './auth/setup.service';
 
 const appRoutes: Routes = [
     { path: 'login', component: LoginComponent },
@@ -134,7 +135,8 @@ const appRoutes: Routes = [
         UserService,
         LocationService,
         PermissionService,
-        MonitorService
+        MonitorService,
+        SetupService
     ],
     bootstrap: [AppComponent]
 })

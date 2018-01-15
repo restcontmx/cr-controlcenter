@@ -15,6 +15,8 @@ export class LocationDetailComponent implements OnInit {
     public locations : Array<any> = []
     public errors : String = ""
     public status : Array<any> = []
+    public location_id : Number
+    public success_msj : String 
 
     // Constructor function
     // @param authservice: authentication service
@@ -36,8 +38,8 @@ export class LocationDetailComponent implements OnInit {
         // initialize page
         this.activated_route.params.subscribe( params => {
             let id = params[ 'id' ]
-            console.log( id )
-            this.getStatus( id )
+            this.location_id = id
+            this.getStatus( this.location_id )
         })
     }
 
@@ -45,14 +47,26 @@ export class LocationDetailComponent implements OnInit {
     // @param id - location id
     // @returns none
     getStatus( id ) : void {
-        console.log( "Inside get status" )
         this.location_service.getStatus( id )
             .map( res => res.json() )
             .subscribe( response => {
-                console.log( response )
                 if( !response.error ) { 
                     console.log( response )
                     this.status = response.data
+                } else {
+                    this.errors = response.message
+                }
+            })
+    }
+
+    hardUpdate() : void {
+        this.location_service.hardUpdate( this.location_id )
+            .map( res => res.json() )
+            .subscribe( response => {
+                if( !response.error ) {
+                    this.success_msj = "Hard Update successful"
+                    console.log( this.success_msj )
+                    this.getStatus( this.location_id )
                 } else {
                     this.errors = response.message
                 }
