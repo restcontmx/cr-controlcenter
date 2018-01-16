@@ -1,4 +1,3 @@
-
 var express       = require( 'express' ),
     path          = require( 'path' ),
     favicon       = require( 'serve-favicon' ),
@@ -9,7 +8,7 @@ var express       = require( 'express' ),
     http          = require('http'),
     app           = express();
 
-// API file for interacting with MongoDB
+// API file 
 const auth = require('./server/routes/auth');
 const business = require('./server/routes/business');
 const user = require('./server/routes/user');

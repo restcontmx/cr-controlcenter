@@ -17,6 +17,7 @@ export class LocationDetailComponent implements OnInit {
     public status : Array<any> = []
     public location_id : Number
     public success_msj : String 
+    public updating : boolean = false
 
     // Constructor function
     // @param authservice: authentication service
@@ -47,6 +48,7 @@ export class LocationDetailComponent implements OnInit {
     // @param id - location id
     // @returns none
     getStatus( id ) : void {
+        this.updating = true
         this.location_service.getStatus( id )
             .map( res => res.json() )
             .subscribe( response => {
@@ -55,11 +57,12 @@ export class LocationDetailComponent implements OnInit {
                     this.status = response.data
                 } else {
                     this.errors = response.message
-                }
+                }this.updating = false
             })
     }
 
     hardUpdate() : void {
+        this.updating = true
         this.location_service.hardUpdate( this.location_id )
             .map( res => res.json() )
             .subscribe( response => {
@@ -69,7 +72,7 @@ export class LocationDetailComponent implements OnInit {
                     this.getStatus( this.location_id )
                 } else {
                     this.errors = response.message
-                }
+                }this.updating = false
             })
     }
 
